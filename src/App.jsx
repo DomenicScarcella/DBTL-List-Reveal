@@ -3,8 +3,7 @@ import wmlogo from "./art/wmlogo.png";
 import { ListModular } from "./ListModular";
 import "./all.css";
 
-
-function App() {
+export function App() {
 
   const [openingScreenVisible, setOpeningScreenVisible] = useState(true);
 
@@ -33,5 +32,3 @@ function App() {
     </div>
   )
 }
-
-export default App

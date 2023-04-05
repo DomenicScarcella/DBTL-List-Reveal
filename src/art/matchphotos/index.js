@@ -1,0 +1,11 @@
+export { default as BIANCA_ASUKA } from "./BIANCA_ASUKA.png";
+export { default as BROCK_OMOS } from "./BROCK_OMOS.png";
+export { default as CHARLOTTE_RHEA } from "./CHARLOTTE_RHEA.png";
+export { default as EDGE_FINN } from "./EDGE_FINN.png";
+export { default as IC } from "./DREW_GUNTHER_SHEAMUS.png";
+export { default as MYSTERIOS } from "./MYSTERIOS.png";
+export { default as ROLLINS_PAUL } from "./ROLLINS_PAUL.png";
+export { default as ROMAN_CODY } from "./ROMAN_CODY.png";
+export { default as SIX_WOMEN_TAG } from "./6WOMEN_TAG.png";
+export { default as THEORY_CENA } from "./THEORY_CENA.png";
+export { default as USOS_SAMI_KO } from "./USOS_SAMI_KO.png";
