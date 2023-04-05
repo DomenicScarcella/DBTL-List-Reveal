@@ -1,4 +1,4 @@
-import * as mp from "./art/matchphotos/index.js";
+import * as mp from "./art/matchphotos/mp-index.js";
 
 const a = ["Roman Reigns (c) vs. Cody Rhodes", mp.ROMAN_CODY, "A", "hide"];
 const b = ["Austin Theory (c) vs. John Cena", mp.THEORY_CENA, "B", "hide"];
