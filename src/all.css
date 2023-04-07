@@ -75,6 +75,7 @@ body {
     top: 0;
     bottom: 0;
     margin: auto;
+    border: .125vw solid black;
     box-shadow: 0 1.25vh 2.25vh black;
 }
 
@@ -119,6 +120,7 @@ h2 {
     background-color: gray;
     padding: auto 1vw;
     margin: auto;
+    border: .125vw solid black;
 }
 
 .hide {
