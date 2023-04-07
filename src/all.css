@@ -56,13 +56,21 @@ body {
 .featured-match {
     width: 45vw;
     height: 60vh;
-    background-image: url("./art/wmlogo.png");
+    /* background-image: url("./art/wmlogo.png"); */
     background-size: 46.5vw;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 #null-image {
+    width: 48vw;
+    height: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
     box-shadow: none;
 }
 
@@ -94,16 +102,18 @@ body {
     justify-content: space-between;
 }
 
-.list-name {
+h2 {
     width: 100%;
     height: auto;
+    color: black;
     text-align: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size:2.5vh;
+    font-style: italic;
+    font-weight: 400;
     letter-spacing: .1vh;
     margin-top: 1vh;
-    color: black;
-    font-style: italic;
+    margin-bottom: .5vh;
 }
 
 .list-item {

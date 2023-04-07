@@ -19,7 +19,7 @@ export function App() {
         { openingScreenVisible
           ?
           <div className="open-modular">
-              <img id="open-logo" src={wmlogo} onClick={() => { setOpeningScreenVisible(false) }} />
+              <img id="open-logo" src={wmlogo} alt="Large graphic of WrestleMania 39 logo" onClick={() => { setOpeningScreenVisible(false) }} />
           </div>
           : <ListModular />
         }
