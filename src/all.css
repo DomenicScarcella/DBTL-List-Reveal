@@ -14,17 +14,17 @@ body {
 .head-logo-modular h1 {
     text-align: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-weight: 500;
     font-size: 8vh;
+    font-weight: 500;
     color: black;
     margin: 0;
     line-height: 105%;
 }
 
 .open-modular {
-    background-color: none;
     width: 96vw;
     height: 60vh;
+    background-color: none;
     position: absolute;
     top: 18.5vh;
     left: 1.75vw;
@@ -40,9 +40,9 @@ body {
 }
 
 .list-modular {
-    background-color: white;
     width: 96vw;
     height: 60vh;
+    background-color: white;
     display: flex;
     flex-direction: row;
     position: absolute;
@@ -56,21 +56,13 @@ body {
 .featured-match {
     width: 45vw;
     height: 60vh;
-    /* background-image: url("./art/wmlogo.png"); */
+    background-image: url("./art/wmlogo.png");
     background-size: 46.5vw;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 #null-image {
-    width: 48vw;
-    height: auto;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
     box-shadow: none;
 }
 
@@ -139,26 +131,26 @@ h2 {
 }
 
 #active-left {
-    font-size: 3.75vh;
+    width: 23vw;
+    min-height: 12vh;
     color: darkred;
+    font-size: 3.75vh;
     background-color: lightyellow;
     text-shadow: .1vh .1vh black;
     box-shadow: -0.75vh 0.5vh 1.25vh black;
-    width: 23vw;
     padding-left: 1vw;
     padding-right: 1vw;
-    min-height: 12vh;
 }
 
 #active-right {
-    font-size: 3.75vh;
+    width: 23vw;
+    min-Height: 12vh;
     color: darkred;
+    font-size: 3.75vh;
     background-color: lightyellow;
     text-shadow: .1vh .1vh black;
     box-shadow: .75vh 0.5vh 1.25vh black;
-    width: 23vw;
     padding-left: 1vw;
     padding-right: 1vw;
     margin-left: -1.5vw;
-    min-Height: 12vh;
 }
