@@ -135,8 +135,16 @@ h2 {
     border-color: #bfbfbf #bfbfbf #3f3f3f #3f3f3f;
 }
 
+.L:active {
+    border-color: #3f3f3f #3f3f3f #bfbfbf #bfbfbf;
+}
+
 .R {
     border-color: #bfbfbf #3f3f3f #3f3f3f #bfbfbf;
+}
+
+.R:active {
+    border-color: #3f3f3f #bfbfbf #bfbfbf #3f3f3f;
 }
 
 #active-L {
