@@ -19,23 +19,25 @@ export function ListModular() {
                         return (
                             <button
                                 key={L_R.concat(i)} 
-                                className={"list-item " + item.vis}
+                                className={"list-item ".concat(item.vis)}
                                 onClick={() => {
                                     if (item.vis == "hide") {
                                         item.vis = "unhide";
-                                        setLastClick(L_R.concat(i + "-unhide"));
+                                        setLastClick(L_R.concat(i).concat("-unhide"));
                                         if (matchImage != item.pix) { setMatchImage(item.pix) };
                                         setActive(item.title);
                                     } else {
                                         item.vis = "hide";
-                                        setLastClick(L_R.concat(i + "-hide"));
+                                        setLastClick(L_R.concat(i).concat("-hide"));
                                         if (matchImage == item.pix) { setMatchImage(null); setActive("Small graphic of WrestleMania 39 logo") }
                                     }
                                 }}
-                                id={ (String(active).valueOf() == String(item.title).valueOf())
+                                id={
+                                    (String(active).valueOf() == String(item.title).valueOf())
                                     && (item.vis == "unhide")
                                     ? ((L_R == "L") ? "active-left" : "active-right")
-                                    : "" }
+                                    : ""
+                                }
                             >
                                 {i}. {item.title}
                             </button>
@@ -45,9 +47,10 @@ export function ListModular() {
             </div>
         )
     }
-
-    function FeaturedMatch() {
-        return (
+    
+    return (
+        <div className="list-modular">
+            { ListSingle(listL, "L") }
             <div className="featured-match">
                 {
                     matchImage == null && lastClick.length >= 0
@@ -56,13 +59,6 @@ export function ListModular() {
                 }
                 <img id="spotlight" src={spotlight} alt="A pair of hanging spotlights shining on the main image" />
             </div>
-        )
-    }
-    
-    return (
-        <div className="list-modular">
-            { ListSingle(listL, "L") }
-            { FeaturedMatch() }
             { ListSingle(listR, "R") }
         </div>
     )
