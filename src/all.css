@@ -13,10 +13,10 @@ body {
 
 .head-logo-modular h1 {
     text-align: center;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow bold', sans-serif;
     font-size: 8vh;
     font-weight: 500;
-    color: black;
+    color: #000000;
     margin: 0;
     line-height: 105%;
 }
@@ -42,13 +42,13 @@ body {
 .list-modular {
     width: 96vw;
     height: 60vh;
-    background-color: white;
+    background-color: #ffffff;
     display: flex;
     flex-direction: row;
     position: absolute;
     top: 18.5vh;
     left: 1.75vw;
-    border: .25vw solid darkgray;
+    border: .25vw solid #7f7f7f;
     border-radius: 2vw;
     justify-content: space-around;
 }
@@ -75,8 +75,7 @@ body {
     top: 0;
     bottom: 0;
     margin: auto;
-    border: .125vw solid black;
-    box-shadow: 0 1.25vh 2.25vh black;
+    box-shadow: 0 1.25vh 2.25vh #000000;
 }
 
 #spotlight {
@@ -98,9 +97,9 @@ body {
 h2 {
     width: 100%;
     height: auto;
-    color: black;
+    color: #000000;
     text-align: center;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow bold', sans-serif;
     font-size:2.5vh;
     font-style: italic;
     font-weight: 400;
@@ -117,41 +116,49 @@ h2 {
     font-family: sans-serif;
     font-size: 2.5vh;
     font-weight: 600;
-    background-color: gray;
+    background-color: #7f7f7f;
     padding: auto 1vw;
     margin: auto;
-    border: .125vw solid black;
+    border: .25vw solid #000000;
 }
 
 .hide {
-    color: gray;
+    color: #7f7f7f;
 }
 
 .unhide {
-    color: black;
-    background-color: aliceblue;
+    color: #000000;
+    background-color: #eff7ff;
 }
 
-#active-left {
+.L {
+    border-color: #bfbfbf #bfbfbf #3f3f3f #3f3f3f;
+}
+
+.R {
+    border-color: #bfbfbf #3f3f3f #3f3f3f #bfbfbf;
+}
+
+#active-L {
     width: 23vw;
     min-height: 12vh;
-    color: darkred;
+    color: #8f0000;
     font-size: 3.75vh;
-    background-color: lightyellow;
-    text-shadow: .1vh .1vh black;
-    box-shadow: -0.75vh 0.5vh 1.25vh black;
+    background-color: #ffffDf;
+    text-shadow: -.125vh .125vh #000000;
+    box-shadow: -0.75vh 0.5vh 1.25vh #000000;
     padding-left: 1vw;
     padding-right: 1vw;
 }
 
-#active-right {
+#active-R {
     width: 23vw;
     min-Height: 12vh;
-    color: darkred;
+    color: #8f0000;
     font-size: 3.75vh;
-    background-color: lightyellow;
-    text-shadow: .1vh .1vh black;
-    box-shadow: .75vh 0.5vh 1.25vh black;
+    background-color: #ffffdf;
+    text-shadow: .125vh .125vh #000000;
+    box-shadow: .75vh 0.5vh 1.25vh #000000;
     padding-left: 1vw;
     padding-right: 1vw;
     margin-left: -1.5vw;
