@@ -9,6 +9,14 @@ export function ListModular() {
     const [matchImage, setMatchImage] = useState(null);
     const [lastClick, setLastClick] = useState("");
 
+    const clearFeaturedMatch = () => {
+        setMatchImage(null); setActive("Small graphic of WrestleMania 39 logo")
+    }
+
+    const newFeaturedMatch = (p, t) => {
+        setMatchImage(p); setActive(t)
+    }
+
     function ListSingle(arr, L_R) {
         return (
             <div className="single-list">
@@ -23,18 +31,17 @@ export function ListModular() {
                                 onClick={() => {
                                     if (item.vis == "hide") {
                                         item.vis = "unhide";
-                                        if (matchImage != item.pix) { setMatchImage(item.pix) };
-                                        setActive(item.title)
+                                        if (matchImage != item.pix) { newFeaturedMatch(item.pix, item.title) }
                                     } else {
                                         item.vis = "hide";
-                                        if (matchImage == item.pix) { setMatchImage(null); setActive("Small graphic of WrestleMania 39 logo") }
+                                        if (matchImage == item.pix) { clearFeaturedMatch() }
                                     }
                                     setLastClick(L_R + i + "_" + item.vis);
                                 }}
                                 id={
                                     (String(active).valueOf() == String(item.title).valueOf())
                                     && (item.vis == "unhide")
-                                    ? ((L_R == "L") ? "active-L" : "active-R")
+                                    ? ((L_R == "L") ? "active-match-L" : "active-match-R")
                                     : ""
                                 }
                             >
@@ -54,9 +61,21 @@ export function ListModular() {
                 {
                     matchImage == null && lastClick.length >= 0
                     ? <img id="null-image" />
-                    : <img id="featured-image" src={matchImage} alt={"WWE graphic featuring " + active} onClick={() => { setMatchImage(null); setActive("Small graphic of WrestleMania 39 logo"); setLastClick("matchImage reset") }}  />
+                    : <img 
+                        id="featured-image" 
+                        src={matchImage} 
+                        alt={"WWE graphic featuring " + active} 
+                        onClick={() => {
+                            clearFeaturedMatch();
+                            setLastClick("matchImage reset")
+                        }}
+                    />
                 }
-                <img id="spotlight" src={spotlight} alt="A pair of hanging spotlights shining on the main image area in the center of the screen" />
+                <img 
+                    id="spotlight"
+                    src={spotlight}
+                    alt="A pair of hanging spotlights shining on the main image area in the center of the screen"
+                />
             </div>
             { ListSingle(listR, "R") }
         </div>

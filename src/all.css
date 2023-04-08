@@ -3,7 +3,7 @@ body {
     margin: 0;
 }
 
-.head-logo-modular {
+.header {
     width: 100%;
     height: auto;
     display: flex;
@@ -11,12 +11,34 @@ body {
     margin-top: 1vh;
 }
 
-.head-logo-modular h1 {
+.header h1 {
     text-align: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow bold', sans-serif;
     font-size: 8vh;
     font-weight: 500;
     color: #000000;
+    margin: 0;
+    line-height: 105%;
+}
+
+.footer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1vh;
+}
+
+.footer h1 {
+    color: #000000;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow bold', sans-serif;
+    font-size: 8.8vh;
+    font-style: italic;
+    font-weight: 500;
+    text-shadow: 0 0 1rem #ffd700;
+    position: absolute;
+    bottom: 7vh;
+    left: 2vw;
     margin: 0;
     line-height: 105%;
 }
@@ -147,7 +169,7 @@ h2 {
     border-color: #3f3f3f #bfbfbf #bfbfbf #3f3f3f;
 }
 
-#active-L {
+#active-match-L {
     width: 23vw;
     min-height: 12vh;
     color: #8f0000;
@@ -159,7 +181,7 @@ h2 {
     padding-right: 1vw;
 }
 
-#active-R {
+#active-match-R {
     width: 23vw;
     min-Height: 12vh;
     color: #8f0000;
