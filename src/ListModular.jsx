@@ -53,10 +53,9 @@ export function ListModular() {
             </div>
         )
     }
-    
-    return (
-        <div className="list-modular">
-            { ListSingle(listL, "L") }
+
+    function FeaturedMatch() {
+        return (
             <div className="featured-match">
                 {
                     matchImage == null && lastClick.length >= 0
@@ -77,6 +76,13 @@ export function ListModular() {
                     alt="A pair of hanging spotlights shining on the main image area in the center of the screen"
                 />
             </div>
+        )
+    }
+    
+    return (
+        <div className="list-modular">
+            { ListSingle(listL, "L") }
+            { FeaturedMatch() }
             { ListSingle(listR, "R") }
         </div>
     )

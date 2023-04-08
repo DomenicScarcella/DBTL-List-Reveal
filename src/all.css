@@ -97,7 +97,7 @@ body {
     top: 0;
     bottom: 0;
     margin: auto;
-    box-shadow: 0 1.25vh 2.25vh #000000;
+    box-shadow: 0 1.25vh 2.25vh .25vh #000000;
 }
 
 #spotlight {
