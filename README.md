@@ -69,7 +69,7 @@ The images used are stored in an "art" directory, which also has a "matchphotos"
 
 The dataJohn.js and dataDom.js files each import the information from mp-index.js, and then use that in building a data object for each match.  Each match object gets assigned a separate variable -- I kept it simple with lowercase letters, a through k -- and includes a title (string), a pix (variable pointing to a .png file), and a vis (string: "hide").  This vis string will be read as a className within the list items, to determine whether the item is in "hide" or "unhide" mode.
 
-Side note:  I initially used arrays instead of objects for each match's data, because arrays were easy for me to code.  But it's eventually more semantic to use objects and be able to assign key-value pairs with a descriptive key;  makes the code easier to read.  This was also suggested by a colleague at Silicon Society.  It's good to have someone else read your code and give feedback, even if the code has no mistakes.  Even working code can be improved!
+Side note:  I initially used arrays instead of objects for each match's data, because arrays were easy for me to code.  But it's eventually more semantic to use objects and be able to assign key-value pairs with a descriptive key;  makes the code easier to read.  This was also suggested by a colleague at Silicon Society.  It's good to have someone else read your code and give feedback, even if the code has no functional failures.  Even correctly working code can be improved!
 
 The completed file looks like this:
 ### ![image](https://user-images.githubusercontent.com/76451364/231040387-2582e40c-f551-48df-ac84-7cf4208fc2ee.png)
