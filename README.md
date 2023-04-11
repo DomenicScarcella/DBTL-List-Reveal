@@ -74,29 +74,29 @@ Side note:  I initially used arrays instead of objects for each match's data, be
 The completed file looks like this:
 ### ![image](https://user-images.githubusercontent.com/76451364/231040387-2582e40c-f551-48df-ac84-7cf4208fc2ee.png)
 
-Back to the dataJohn.js and dataDom.js structures, having each match assigned to a one-letter variable made it very easy to give my friend instructions on how to select his matches.  I sent him a .txt file that looked like the eventual dataJohn.js file.  All he had to do was type the lowercase letter of each match into the space on the right side of the equals sign in lines 27 to 31.  Then he sent the .txt file back to me, and without opening the .txt file, I simply dropped it into the app's "src" folder and switched the file extension from .txt to .js.
+Back to the dataJohn.js and dataDom.js structures, having each match assigned to a one-letter variable made it very easy to give my friend instructions on how to select his matches.  I sent him a .txt file that looked like the eventual dataJohn.js file.  All he had to do was type the lowercase letter of each match into the space on the right side of the equals sign in lines 27 to 31.  Then he sent the .txt file back to me.  Without opening the .txt file, I simply dropped it into the app's "src" folder and switched the file extension from .txt to .js.
 
 The final line of code in the dataJohn.js file is the export line, which collects the header and matches 1 through 5 into a single array of objects.  Since my friend's list would be displayed on the left and mine would be on the right, the naming convention is simply to begin each variable with an "L" for his and an "R" for mine.  Putting the list header line first in the exported array (index 0 of the array) also means that the matches 1-5 will be indexed as 1-5 in the array;  this comes in handy later when the data is being parsed!
 
 ## Data manipulation by the ListModular component and subcomponents
 
-In ListModular -- where most of the XML is -- you find the ListSingle sub-component and the FeaturedMatch sub-component.  ListSingle contains most of the data parsing, and also takes two arguments:  arr (an array of data objects, imported from the dataJohn.js and dataDom.js files as listL and listR, respectively), and L_R (string of one letter, "L" or "R" to be used in setting side-specific styling).
+In ListModular -- where most of the XML is -- you find the ListSingle sub-component and the FeaturedMatch sub-component.  ListSingle contains most of the data parsing, and also takes two arguments:  arr (an array of data objects, imported from the dataJohn.js and dataDom.js files as listL and listR, respectively), and L_R (string of one letter, "L" or "R" for when the sie of the screen matters to the display and/or data tracking).
 
 The ListSingle builds the list by putting the header (the 0 index of the array, and the only key-value pair that it contains, the title) into line 23.  Then the real work happens, thanks to the .map method in line 25:
 
 ### ![image](https://user-images.githubusercontent.com/76451364/231050472-fbd50db3-ed09-4dd8-803c-128791f645c2.png)
 
-An important detail is line 26, where the index of the item being mapped is stored as a simple string value.  This gets used in generating the unique key for each button element (line 29), for the setLastClick state (line 39) and to be printed along with the item's title on the screen (line 48).  Some conditional logic updates state and styling.
+An important detail is line 26, where the index of the item being mapped is stored as a simple string value "i".  This gets used in generating the unique key for each button element (line 29), for the setLastClick state (line 39), and to appear on screen along with the item.title (line 48).  Some conditional logic updates state and styling.
 
-I used a button element rather than a div for each list item, because the button tag has some built-in styling that's useful, like horizontal and vertical centering and smooth resizing based on the amount of text to be displayed.  Plus, sincethey are supposed to be clicked, they technically are buttons, heh!
+I used a button element rather than a div for each list item, because the button tag has some built-in styling that's useful, like horizontal and vertical centering and smooth resizing based on the amount of text to be displayed.  Plus, since they are supposed to be clicked, they technically are buttons, heh!
 
-And speaking of state, there are three sets of useState declared at the top of ListModular, along with two methods that combine two state changes into one method call.
+And speaking of state, there are three sets of useState declared at the top of ListModular, along with two methods.
 
 *  State "active, setActive" is a string that has a default value when no match is active, and becomes the item.title when a match is active.
-*  State "matchImage, setMatchImage" has a default of null -- the default image is part of the background of the div element, so it technically is always there but is simply covered hen there's a active match -- and becomes the item.pix when a match is active.
+*  State "matchImage, setMatchImage" has a default of null -- the default image is part of the background of the div element, so it technically is always there but is simply covered when there's a active match -- and becomes the item.pix when a match is active.
 *  State "lastClick, setLastClick" is a string with a default value of an empty string, and becomes a tracker for the last click-generated action.
 
-Since active and matchImage are always working in tandem, I made methods to combine those two state calls into a single method call:
+Since active and matchImage are always working in tandem, I made methods to combine those two state calls into single method calls (clearFeaturedMatch and newFeaturedMatch):
 
 ### ![image](https://user-images.githubusercontent.com/76451364/231053309-e51b7556-da6b-4925-86bf-85c1e3c01898.png)
 
