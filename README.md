@@ -16,6 +16,7 @@ Now for the real fun!
 
 If you do clone the repo locally and install the dependencies, you can do . . .
 
+npm install
 npm run dev
 
 . . . from the terminal in the project folder, and the app will launch in a localhost port.  The app works best when it's in full-screen mode in a 16:9 aspect ratio, though it also works as narrow as 12:9 (4:3), or as wide as 20:9.
@@ -74,6 +75,17 @@ Back to the dataJohn.js and dataDom.js structures, having each match assigned to
 
 The final line of code in the dataJohn.js file is the export line, which collects the header and matches 1 through 5 into a single array of objects.  Since my friend's list would be displayed on the left and mine would be on the right, the naming convention is simply to begin each variable with an "L" for his and an "R" for mine.  Putting the list header line first in the exported array (index 0 of the array) also means that the matches 1-5 will be indexed as 1-5 in the array;  this comes in handy later when the data is being parsed!
 
+In ListModular -- where most of the XML is -- you find the ListSingle sub-component and the FeaturedMatch sub-component.  ListSingle contains most of the data parsing, and also takes two arguments:  arr (an array of data objects, imported from the dataJohn.js and dataDom.js files as listL and listR, respectively), and L_R (string of one letter, "L" or "R" to be used in setting side-specific styling).
+
+The ListSingle builds the list by putting the header (the 0 index of the array, and the only key-value pair that it contains, the title) into line 23.  Then the real work happens, thanks to the .map method in line 25:
+
+### ![image](https://user-images.githubusercontent.com/76451364/231050472-fbd50db3-ed09-4dd8-803c-128791f645c2.png)
+
+An important detail is line 26, where the index of the item being mapped is stored as a simple string value.  This gets used in generating the unique key for each button element (line 29), for the setLastClick state (line 39) and to be printed along with the item's title on the screen (line 48).  Some conditional logic updates state and styling.
+
+I used a button element rather than a div for each list item, because the button tag has some built-in styling that's useful, like horizontal and vertical centering and smooth resizing based on the amount of text to be displayed.  Plus, sincethey are supposed to be clicked, they technically are buttons, heh!
+
+And speaking of state, there are three sets of useState declared at the top of ListModular, along with two methods that combine two state changes into one method call.
 
 
 # This Is My First App . . .
