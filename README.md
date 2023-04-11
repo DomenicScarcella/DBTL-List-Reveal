@@ -59,6 +59,22 @@ The five list tems in each list should appear as plain rectangles.  All list ite
 
 Several actions happen with one click, which makes it simpler to use, I think.  And it's a fun way to do a list reveal!
 
+# How the Data Works in the App
+
+The images used are stored in an "art" directory, which also has a "matchphotos" subdirectory.  "matchphotos" has all the images that pertain to each match, plus an mp-index.js file to catalogue everything for simpler import coding.  This was a great suggestion from a colleague at Silicon Society!
+
+The dataJohn.js and dataDom.js files each import the information from mp-index.js, and then use that in building a data object for each match.  Each match object gets assigned a separate variable -- I kept it simple with lowercase letters, a through k -- and includes a title (string), a pix (variable pointing to a .png file), and a vis (string: "hide").  This vis string will be read as a className within the list items, to determine whether the item is in "hide" or "unhide" mode.
+
+Side note:  I initially used arrays instead of objects for each match's data, because arrays were easy for me to code.  But it's eventually more semantic to use objects and be able to assign key-value pairs with a descriptive key;  makes the code easier to read.  This was also suggested by a colleague at Silicon Society.  It's good to have someone else read your code and give feedback, even if the code has no mistakes.  Even working code can be improved!
+
+### ![image]!(https://user-images.githubusercontent.com/76451364/231040387-2582e40c-f551-48df-ac84-7cf4208fc2ee.png)
+
+
+Back to the dataJohn.js and dataDom.js structures, having each match assigned to a one-letter variable made it very easy to give my friend instructions on how to select his matches.  I sent him a .txt file that looked like the eventual dataJohn.js file.  All he had to do was type the lowercase letter of each match into the space on the right side of the equals sign in lines 27 to 31.  Then he sent the .txt file back to me, and without opening the .txt file, I simply dropped it into the app's "src" folder and switched the file extension from .txt to .js.
+
+The final line of code in the dataJohn.js file is the export line, which collects the header and matches 1 through 5 into a single array of objects.  Since my friend's list would be displayed on the left and mine would be on the right, the naming convention is simply to begin each variable with an "L" for his and an "R" for mine.  Putting the list header line first in the exported array (index 0 of the array) also means that the matches 1-5 will be indexed as 1-5 in the array;  this comes in handy later when the data is being parsed!
+
+
 # This Is My First App . . .
 
 . . . that I built from scratch without copying a tutorial of some sort.  I didn't know if I could do this, until I did.  I'm proud of this build-from-scratch app, and I hope you like it, too!
