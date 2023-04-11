@@ -67,8 +67,7 @@ The dataJohn.js and dataDom.js files each import the information from mp-index.j
 
 Side note:  I initially used arrays instead of objects for each match's data, because arrays were easy for me to code.  But it's eventually more semantic to use objects and be able to assign key-value pairs with a descriptive key;  makes the code easier to read.  This was also suggested by a colleague at Silicon Society.  It's good to have someone else read your code and give feedback, even if the code has no mistakes.  Even working code can be improved!
 
-### ![image]!(https://user-images.githubusercontent.com/76451364/231040387-2582e40c-f551-48df-ac84-7cf4208fc2ee.png)
-
+### ![image](https://user-images.githubusercontent.com/76451364/231040387-2582e40c-f551-48df-ac84-7cf4208fc2ee.png)
 
 Back to the dataJohn.js and dataDom.js structures, having each match assigned to a one-letter variable made it very easy to give my friend instructions on how to select his matches.  I sent him a .txt file that looked like the eventual dataJohn.js file.  All he had to do was type the lowercase letter of each match into the space on the right side of the equals sign in lines 27 to 31.  Then he sent the .txt file back to me, and without opening the .txt file, I simply dropped it into the app's "src" folder and switched the file extension from .txt to .js.
 
