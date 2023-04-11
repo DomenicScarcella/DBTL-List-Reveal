@@ -91,14 +91,21 @@ I used a button element rather than a div for each list item, because the button
 
 And speaking of state, there are three sets of useState declared at the top of ListModular, along with two methods that combine two state changes into one method call.
 
-    1. State "active, setActive" is a string that has a default value when no match is active, and becomes the item.title when a match is active.
-    2. State "matchImage, setMatchImage" has a default of null -- the default image is part of the background of the div element, so it technically is always there but is simply covered hen there's a active match -- and becomes the item.pix when a match is active.
-    3. State "lastClick, setLastClick" is a string with a default value of an empty string, and becomes a tracker for the last click-generated action.
+*  State "active, setActive" is a string that has a default value when no match is active, and becomes the item.title when a match is active.
+*  State "matchImage, setMatchImage" has a default of null -- the default image is part of the background of the div element, so it technically is always there but is simply covered hen there's a active match -- and becomes the item.pix when a match is active.
+*  State "lastClick, setLastClick" is a string with a default value of an empty string, and becomes a tracker for the last click-generated action.
 
 Since active and matchImage are always working in tandem, I made methods to combine those two state calls into a single method call:
 
 ### ![image](https://user-images.githubusercontent.com/76451364/231053309-e51b7556-da6b-4925-86bf-85c1e3c01898.png)
 
+The FeaturedMatch subcomponent does comparatively little data manipulation, with only one possible clickable action that would change state.  Mostly, it's reading changes that have been made from clicking the buttons that comprise each list:
+
+### ![image](https://user-images.githubusercontent.com/76451364/231053974-fc702958-8156-41e9-b117-65bd58870a87.png)
+
+Since these subcomponents handle all the logic and state changes for ListModular, the ListModular return statement can be very short:
+
+### ![image](https://user-images.githubusercontent.com/76451364/231054154-e32b0380-c9be-45cd-ac24-53aa46927a74.png)
 
 # This Is My First App . . .
 
