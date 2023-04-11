@@ -14,9 +14,10 @@ This is a Vite app using React and lots of CSS.  Most of the code is in ListModu
 
 Now for the real fun!
 
-If you do clone the repo locally and install the dependencies, you can do . . .
+If you clone the repo to your local computer, you can do . . .
 
 npm install
+
 npm run dev
 
 . . . from the terminal in the project folder, and the app will launch in a localhost port.  The app works best when it's in full-screen mode in a 16:9 aspect ratio, though it also works as narrow as 12:9 (4:3), or as wide as 20:9.
