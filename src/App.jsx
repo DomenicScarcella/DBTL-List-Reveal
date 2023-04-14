@@ -4,7 +4,6 @@ import { ListModular } from "./ListModular";
 import "./all.css";
 
 export function App() {
-
   const [openingScreenVisible, setOpeningScreenVisible] = useState(true);
 
   return (
