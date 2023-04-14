@@ -2,7 +2,6 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { beforeEach, describe, expect, test } from "vitest";
 import "@testing-library/dom";
 import { App } from "../src/App.jsx";
-import { ListModular } from "../src/ListModular";
 
 describe("App on initial rendering", () => {
     beforeEach(() => {
@@ -26,11 +25,10 @@ describe("App on initial rendering", () => {
     });
 });
 
-describe("App after clicking wmlogo", () => {
+describe("App after clicking wmlogo img (id='open-logo') ", () => {
     beforeEach(() => {
         render(<App />);
-        const wmlogo = document.getElementById("open-logo");
-        fireEvent.click(wmlogo);
+        fireEvent.click(document.getElementById("open-logo"));
     });
 
     test("should display '#DontBuryTheLead' ", () => {
