@@ -48,3 +48,22 @@ describe("ListModular on initial rendering", () => {
         expect(document.getElementById("featured-image")).toBeNull();
     });   
 });
+
+describe("ListModular after various click combinations", () => {
+    beforeEach(() => {
+        render(<ListModular />);
+    });
+
+    test("should unhide list item after 1 click and set FeaturedMatch image", () => {
+        fireEvent.click(document.querySelector("button.L1"));
+        expect(document.querySelector("img#featured-image")).toBeVisible();
+
+    })
+
+
+});
+
+
+
+
+

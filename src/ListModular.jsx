@@ -27,7 +27,7 @@ export function ListModular() {
                         return (
                             <button
                                 key={L_R + i} 
-                                className={"list-item " + L_R + " " + item.vis}
+                                className={"list-item " + L_R + " " + item.vis + " " + L_R+i}
                                 onClick={() => {
                                     if (item.vis == "hide") {
                                         item.vis = "unhide";
