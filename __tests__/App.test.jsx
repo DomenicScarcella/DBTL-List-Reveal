@@ -20,8 +20,20 @@ describe("App on initial rendering", () => {
         expect(screen.queryByText(/Top 5 Matches We Want To See/)).toBeVisible();
     });
 
+    test("should display large wmlogo", () => {
+        expect(screen.queryByAltText(/Large graphic of WrestleMania 39 logo/)).toBeVisible();
+    });
+
     test("should NOT display 'John's List' initially ", () => {
-        expect(screen.queryByText(/John's List"/)).toBeNull();
+        expect(screen.queryByText(/John's List/)).toBeNull();
+    });
+
+    test("should NOT display 'Dom's List' initially ", () => {
+        expect(screen.queryByText(/Dom's List/)).toBeNull();
+    });
+
+    test("should NOT display spotlight graphic", () => {
+        expect(screen.queryByAltText(/A pair of hanging spotlights shining on the main image area in the center of the screen/)).toBeNull();
     });
 });
 
@@ -31,19 +43,31 @@ describe("App after clicking wmlogo img (id='open-logo') ", () => {
         fireEvent.click(document.getElementById("open-logo"));
     });
 
-    test("should display '#DontBuryTheLead' ", () => {
+    test("should still display '#DontBuryTheLead' ", () => {
         expect(screen.queryByText(/#DontBuryTheLead/)).toBeVisible();
     });
 
-    test("should display 'PREVIEW:' ", () => {
+    test("should still display 'PREVIEW:' ", () => {
         expect(screen.queryByText(/PREVIEW:/)).toBeVisible();
     });
 
-    test("should display 'Top 5 Matches We Want To See' ", () => {
+    test("should still display 'Top 5 Matches We Want To See' ", () => {
         expect(screen.queryByText(/Top 5 Matches We Want To See/)).toBeVisible();
     });
 
-    test("after click event on wmlogo, should display 'John's List' ", () =>{
+    test("should no longer display large wmlogo", () => {
+        expect(screen.queryByAltText(/Large graphic of WrestleMania 39 logo/)).toBeNull();
+    });
+
+    test("should now display 'John's List' initially ", () => {
         expect(screen.queryByText(/John's List/)).toBeVisible();
+    });
+
+    test("should now display 'Dom's List' initially ", () => {
+        expect(screen.queryByText(/Dom's List/)).toBeVisible();
+    });
+
+    test("should now display spotlight graphic", () => {
+        expect(screen.queryByAltText(/A pair of hanging spotlights shining on the main image area in the center of the screen/)).toBeVisible();
     });
 });
