@@ -32,7 +32,7 @@ describe("App on initial rendering", () => {
         expect(screen.queryByText(/Dom's List/)).toBeNull();
     });
 
-    test("should NOT display spotlight graphic", () => {
+    test("should NOT display spotlight graphic initially", () => {
         expect(screen.queryByAltText(/A pair of hanging spotlights shining on the main image area in the center of the screen/)).toBeNull();
     });
 });
@@ -55,19 +55,19 @@ describe("App after clicking wmlogo img (id='open-logo') ", () => {
         expect(screen.queryByText(/Top 5 Matches We Want To See/)).toBeVisible();
     });
 
-    test("should no longer display large wmlogo", () => {
+    test("should NOT display large wmlogo after click on wmlogo", () => {
         expect(screen.queryByAltText(/Large graphic of WrestleMania 39 logo/)).toBeNull();
     });
 
-    test("should now display 'John's List' initially ", () => {
+    test("should display 'John's List' after click on wmlogo", () => {
         expect(screen.queryByText(/John's List/)).toBeVisible();
     });
 
-    test("should now display 'Dom's List' initially ", () => {
+    test("should display 'Dom's List' after click on wmlogo", () => {
         expect(screen.queryByText(/Dom's List/)).toBeVisible();
     });
 
-    test("should now display spotlight graphic", () => {
+    test("should display spotlight graphic after click on wmlogo", () => {
         expect(screen.queryByAltText(/A pair of hanging spotlights shining on the main image area in the center of the screen/)).toBeVisible();
     });
 });
