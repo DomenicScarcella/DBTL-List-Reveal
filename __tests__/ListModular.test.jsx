@@ -49,7 +49,7 @@ describe("ListModular on initial rendering", () => {
     });   
 });
 
-describe("ListModular chenges when clicking same list item once, then twice", () => {
+describe("ListModular changes when clicking same list item once, then twice", () => {
     beforeEach(() => {
         render(<ListModular />);
     });
@@ -69,30 +69,131 @@ describe("ListModular chenges when clicking same list item once, then twice", ()
 
     test("should display image for FeaturedMatch after 1 click", () => {
         fireEvent.click(document.querySelector("button.list-item.L.hide.L1"));
-        expect(document.querySelector("img.L1_unhide")).toBeVisible();
+        expect(document.querySelector("img#featured-image")).toBeVisible();
         fireEvent.click(document.querySelector("button.list-item.L.unhide.L1"));
     });
 
     test("should re-hide list item L1 AND undo id=active-match-L AND remove FeaturedMatch image after 2nd click on same list item", () => {
         fireEvent.click(document.querySelector("button.list-item.L.hide.L1"));
         expect(document.querySelector("button.list-item.L.hide.L1")).toBeNull();
-        expect(document.querySelector("button.list-item.L.unhide.L1")).toBeVisible();
-        expect(document.querySelector("button#active-match-L")).toBeVisible();
-        expect(document.querySelector("img.L1_unhide")).toBeVisible();
+        expect(document.querySelector("button.list-item.L.unhide.L1#active-match-L")).toBeVisible();
+        expect(document.querySelector("img#featured-image")).toBeVisible();
         fireEvent.click(document.querySelector("button.list-item.L.unhide.L1"));
-        expect(document.querySelector("img.L1_unhide")).toBeNull();
+        expect(document.querySelector("img#null-image")).toBeVisible();
         expect(document.querySelector("button#active-match-L")).toBeNull();
         expect(document.querySelector("button.list-item.L.unhide.L1")).toBeNull();
         expect(document.querySelector("button.list-item.L.hide.L1")).toBeVisible();
     })
-
-        
-
-
-
 });
 
+describe("ListModular clicking several list items", () => {
+    beforeEach(() => {
+        render(<ListModular />);
+    });
 
+    test("clicking 5 list items once should unhide each of them, and set FeaturedMatch info to the last of those five clicks", () => {
+        fireEvent.click(document.querySelector("button.list-item.L.hide.L1"));
+        fireEvent.click(document.querySelector("button.list-item.L.hide.L2"));
+        fireEvent.click(document.querySelector("button.list-item.L.hide.L3"));
+        fireEvent.click(document.querySelector("button.list-item.L.hide.L4"));
+        fireEvent.click(document.querySelector("button.list-item.L.hide.L5"));
+        expect(document.querySelector("button.list-item.L.unhide.L1")).toBeVisible();
+        expect(document.querySelector("button.list-item.L.unhide.L2")).toBeVisible();
+        expect(document.querySelector("button.list-item.L.unhide.L3")).toBeVisible();
+        expect(document.querySelector("button.list-item.L.unhide.L4")).toBeVisible();
+        expect(document.querySelector("button.list-item.L.unhide.L5#active-match-L")).toBeVisible();
+        expect(document.querySelector("img#featured-image")).toBeVisible();
+        fireEvent.click(document.querySelector("button.list-item.L.unhide.L1"));
+        fireEvent.click(document.querySelector("button.list-item.L.unhide.L2"));
+        fireEvent.click(document.querySelector("button.list-item.L.unhide.L3"));
+        fireEvent.click(document.querySelector("button.list-item.L.unhide.L4"));
+        fireEvent.click(document.querySelector("button.list-item.L.unhide.L5"));
+    });
+
+    test("clicking all 5 listL items once should unhide each of them, and clicking 1 of the newly unhide listL items should hide it while leaving the other 4 items in unhide", () => {
+        fireEvent.click(document.querySelector("button.list-item.L.hide.L1"));
+        fireEvent.click(document.querySelector("button.list-item.L.hide.L2"));
+        fireEvent.click(document.querySelector("button.list-item.L.hide.L3"));
+        fireEvent.click(document.querySelector("button.list-item.L.hide.L4"));
+        fireEvent.click(document.querySelector("button.list-item.L.hide.L5"));
+        fireEvent.click(document.querySelector("button.list-item.L.unhide.L3"));
+        expect(document.querySelector("button.list-item.L.unhide.L1")).toBeVisible();
+        expect(document.querySelector("button.list-item.L.unhide.L2")).toBeVisible();
+        expect(document.querySelector("button.list-item.L.unhide.L3")).toBeNull();
+        expect(document.querySelector("button.list-item.L.unhide.L4")).toBeVisible();
+        expect(document.querySelector("button.list-item.L.unhide.L5#active-match-L")).toBeVisible();
+        expect(document.querySelector("img#featured-image")).toBeVisible();
+        fireEvent.click(document.querySelector("button.list-item.L.unhide.L1"));
+        fireEvent.click(document.querySelector("button.list-item.L.unhide.L2"));
+        fireEvent.click(document.querySelector("button.list-item.L.unhide.L4"));
+        fireEvent.click(document.querySelector("button.list-item.L.unhide.L5"));
+    });
+
+    test("when all of listL is unhide, clicking list-item R1 should activate R1 and the similar list-item in listL (L4)", () => {
+        fireEvent.click(document.querySelector("button.list-item.L.hide.L1"));
+        fireEvent.click(document.querySelector("button.list-item.L.hide.L2"));
+        fireEvent.click(document.querySelector("button.list-item.L.hide.L3"));
+        fireEvent.click(document.querySelector("button.list-item.L.hide.L4"));
+        fireEvent.click(document.querySelector("button.list-item.L.hide.L5"));
+        fireEvent.click(document.querySelector("button.list-item.R.hide.R1"));
+        expect(document.querySelector("button.list-item.L.unhide.L1")).toBeVisible();
+        expect(document.querySelector("button.list-item.L.unhide.L2")).toBeVisible();
+        expect(document.querySelector("button.list-item.L.unhide.L3")).toBeVisible();
+        expect(document.querySelector("button.list-item.L.unhide.L4#active-match-L")).toBeVisible();
+        expect(document.querySelector("button.list-item.L.unhide.L5")).toBeVisible();
+        expect(document.querySelector("button.list-item.R.unhide.R1#active-match-R")).toBeVisible();
+        expect(document.querySelector("img#featured-image")).toBeVisible();
+        fireEvent.click(document.querySelector("button.list-item.L.unhide.L1"));
+        fireEvent.click(document.querySelector("button.list-item.L.unhide.L2"));
+        fireEvent.click(document.querySelector("button.list-item.L.unhide.L3"));
+        fireEvent.click(document.querySelector("button.list-item.L.unhide.L4"));
+        fireEvent.click(document.querySelector("button.list-item.L.unhide.L5"));
+        fireEvent.click(document.querySelector("button.list-item.R.unhide.R1"));
+    });
+});
+
+describe("ListModular clicking the featured-image when FeaturedMatch has active image displayed", () => {
+    beforeEach(() => {
+        render(<ListModular />);
+    });
+
+    test("unhide all list items and click on featured-image should remove featured-image but leave all list items in unhide", () => {
+        fireEvent.click(document.querySelector("button.list-item.L.hide.L1"));
+        fireEvent.click(document.querySelector("button.list-item.L.hide.L2"));
+        fireEvent.click(document.querySelector("button.list-item.L.hide.L3"));
+        fireEvent.click(document.querySelector("button.list-item.L.hide.L4"));
+        fireEvent.click(document.querySelector("button.list-item.L.hide.L5"));
+        fireEvent.click(document.querySelector("button.list-item.R.hide.R1"));
+        fireEvent.click(document.querySelector("button.list-item.R.hide.R2"));
+        fireEvent.click(document.querySelector("button.list-item.R.hide.R3"));
+        fireEvent.click(document.querySelector("button.list-item.R.hide.R4"));
+        fireEvent.click(document.querySelector("button.list-item.R.hide.R5"));
+        expect(document.querySelector("img#featured-image")).toBeVisible();
+        fireEvent.click(document.querySelector("img#featured-image"));
+        expect(document.querySelector("img#featured-image")).toBeNull();
+        expect(document.querySelector("button.list-item.L.unhide.L1")).toBeVisible();
+        expect(document.querySelector("button.list-item.L.unhide.L2")).toBeVisible();
+        expect(document.querySelector("button.list-item.L.unhide.L3")).toBeVisible();
+        expect(document.querySelector("button.list-item.L.unhide.L4")).toBeVisible();
+        expect(document.querySelector("button.list-item.L.unhide.L5")).toBeVisible();
+        expect(document.querySelector("button.list-item.R.unhide.R1")).toBeVisible();
+        expect(document.querySelector("button.list-item.R.unhide.R2")).toBeVisible();
+        expect(document.querySelector("button.list-item.R.unhide.R3")).toBeVisible();
+        expect(document.querySelector("button.list-item.R.unhide.R4")).toBeVisible();
+        expect(document.querySelector("button.list-item.R.unhide.R5")).toBeVisible();
+        fireEvent.click(document.querySelector("button.list-item.L.unhide.L1"));
+        fireEvent.click(document.querySelector("button.list-item.L.unhide.L2"));
+        fireEvent.click(document.querySelector("button.list-item.L.unhide.L3"));
+        fireEvent.click(document.querySelector("button.list-item.L.unhide.L4"));
+        fireEvent.click(document.querySelector("button.list-item.L.unhide.L5"));
+        fireEvent.click(document.querySelector("button.list-item.R.unhide.R1"));
+        fireEvent.click(document.querySelector("button.list-item.R.unhide.R2"));
+        fireEvent.click(document.querySelector("button.list-item.R.unhide.R3"));
+        fireEvent.click(document.querySelector("button.list-item.R.unhide.R4"));
+        fireEvent.click(document.querySelector("button.list-item.R.unhide.R5"));
+
+    });
+});
 
 
 
