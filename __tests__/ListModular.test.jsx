@@ -49,7 +49,7 @@ describe("ListModular on initial rendering", () => {
     });   
 });
 
-describe("ListModular after clicking same list item once, then twice", () => {
+describe("ListModular chenges when clicking same list item once, then twice", () => {
     beforeEach(() => {
         render(<ListModular />);
     });
