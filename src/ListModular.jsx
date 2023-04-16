@@ -58,9 +58,10 @@ export function ListModular() {
         return (
             <div className="featured-match">
                 {
-                    matchImage == null && lastClick.length >= 0
+                    matchImage == null 
                     ? <img id="null-image" />
-                    : <img 
+                    : <img
+                        className={lastClick} 
                         id="featured-image" 
                         src={matchImage} 
                         alt={"WWE graphic featuring " + active} 
