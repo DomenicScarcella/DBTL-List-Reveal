@@ -106,7 +106,7 @@ The FeaturedMatch subcomponent does comparatively little data manipulation, with
 
 Since these subcomponents handle all the logic and state changes for ListModular, the ListModular return statement can be very short:
 
-### ![image](https://user-images.githubusercontent.com/76451364/231054154-e32b0380-c9be-45cd-ac24-53aa46927a74.png)
+### ![image]![LMReturn](https://user-images.githubusercontent.com/76451364/232351191-c1027d2b-ba97-4d1c-b828-4824fd861c31.png)
 
 # This Is My First App . . .
 
