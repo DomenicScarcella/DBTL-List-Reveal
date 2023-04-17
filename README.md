@@ -25,10 +25,8 @@ npm run dev
 ⭐️ The one-page app begins with the headline text on top and bottom.  The top is cenetered (because of a spotlight graphic that will apear later), while the bottom is flush left to accomodate the picture-in-picture in the lower right corner for the livestream videoconferencing platform (we used Restream).
 ### ![image]![01-OpenLogo](https://user-images.githubusercontent.com/76451364/232341256-59038f1c-9320-4cab-be78-2da1cf388abd.png)
 
-
 ⭐️ From the opening screen, click the large logo in the center.  This will replace that large logo with the ListModular component containing both lists, the spotlight graphic and a staging area in the center that will house the dominant photo/image on the page.
 ### ![image]![02-ListModularOpen](https://user-images.githubusercontent.com/76451364/232341263-3e7cd887-7393-4e87-a67b-4c90f6c6d0f6.png)
-
 
 The five list tems in each list should appear as plain rectangles.  All list items begin in "hide" mode, with the text invisible (it's there, but it's the same color as the background).
 
@@ -41,12 +39,10 @@ The five list tems in each list should appear as plain rectangles.  All list ite
     3. This list item will be the "active" item and will appear larger.
 ### ![image]![03-ListItemUnhide](https://user-images.githubusercontent.com/76451364/232341270-ff680fae-b2dc-4fe9-9846-11826899358e.png)
 
-
         a. If a list item in "unhide" mode in the opposite list matches the active item, then each list item will appear larger.
 
         b. All other "unhide" list items will be considered "inactive" and will change to standard size while remaining in "unhide" mode.
 ### ![image]![04-DualActives](https://user-images.githubusercontent.com/76451364/232341279-b1a9742a-4768-449d-9e73-713c9f99cefd.png)
-
 
 ⭐️ If you click on a list item that's in "unhide" mode:
 
@@ -88,7 +84,7 @@ In ListModular -- where most of the XML is -- you find the ListSingle sub-compon
 
 The ListSingle builds the list by putting the header (the 0 index of the array, and the only key-value pair that it contains, the title) into line 23.  Then the real work happens, thanks to the .map method in line 25:
 
-### ![image](https://user-images.githubusercontent.com/76451364/231050472-fbd50db3-ed09-4dd8-803c-128791f645c2.png)
+### ![image]![ListSingle](https://user-images.githubusercontent.com/76451364/232350928-4b09169a-0036-442d-8af7-bf71d38ff7d0.png)
 
 An important detail is line 26, where the index of the item being mapped is stored as a simple string value "i".  This gets used in generating the unique key for each button element (line 29), for the setLastClick state (line 39), and to appear on screen along with the item.title (line 48).  Some conditional logic updates state and styling.
 
@@ -102,11 +98,11 @@ And speaking of state, there are three sets of useState declared at the top of L
 
 Since active and matchImage are always working in tandem, I made methods to combine those two state calls into single method calls (clearFeaturedMatch and newFeaturedMatch):
 
-### ![image](https://user-images.githubusercontent.com/76451364/231053309-e51b7556-da6b-4925-86bf-85c1e3c01898.png)
+### ![image]![LMState](https://user-images.githubusercontent.com/76451364/232351049-74829bca-1d24-4656-ab99-4333a35a63ad.png)
 
 The FeaturedMatch subcomponent does comparatively little data manipulation, with only one possible clickable action that would change state.  Mostly, it's reading changes that have been made from clicking the buttons that comprise each list:
 
-### ![image](https://user-images.githubusercontent.com/76451364/231053974-fc702958-8156-41e9-b117-65bd58870a87.png)
+### ![image]![FeaturedMatch](https://user-images.githubusercontent.com/76451364/232351074-1bd17ef8-4b6b-45de-84a2-8cea2c0228d2.png)
 
 Since these subcomponents handle all the logic and state changes for ListModular, the ListModular return statement can be very short:
 
