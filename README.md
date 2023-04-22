@@ -116,7 +116,7 @@ npm run test
 
 . . . or, to get a browser version of the test results, . . .
 
-npm run tests:ui
+npm run test:ui
 
 . . . from the terminal in the project folder.
 
