@@ -108,6 +108,18 @@ Since these subcomponents handle all the logic and state changes for ListModular
 
 ### ![image]![LMReturn](https://user-images.githubusercontent.com/76451364/232351191-c1027d2b-ba97-4d1c-b828-4824fd861c31.png)
 
+# Tests Added
+
+There are now unit tests in the __tests__ folder, since I wanted this to have automated tests rather than simply me manually testing everything.  You can do . . .
+
+npm run test
+
+. . . or, to get a browser version of the test results, . . .
+
+npm run tests:ui
+
+. . . from the terminal in the project folder.
+
 # This Is My First App . . .
 
 . . . that I built from scratch without copying a tutorial of some sort.  I didn't know if I could do this, until I did.  I'm proud of this build-from-scratch app, and I hope you like it, too!
