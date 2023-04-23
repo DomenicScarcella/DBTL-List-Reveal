@@ -2,7 +2,7 @@ import { useState } from "react";
 import spotlight from "./art/spotlight.png";
 import { listL } from "./dataJohn.js";
 import { listR } from "./dataDom.js";
-import "./all.css";
+import "./ListModular.css";
 
 export function ListModular() {
     const [active, setActive] = useState("Small graphic of WrestleMania 39 logo");

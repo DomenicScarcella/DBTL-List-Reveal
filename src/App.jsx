@@ -1,7 +1,7 @@
 import { useState } from "react";
 import wmlogo from "./art/wmlogo.png";
 import { ListModular } from "./ListModular";
-import "./all.css";
+import "./App.css";
 
 export function App() {
   const [openingScreenVisible, setOpeningScreenVisible] = useState(true);
