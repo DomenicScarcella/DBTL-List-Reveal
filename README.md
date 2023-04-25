@@ -10,6 +10,8 @@ So, I tried my hand at coding one!  Here it is!
 
 This is a Vite app using React and lots of CSS.  Most of the code is in ListModular.jsx.  Using two .js files for our respective lists allowed my friend and I to make our Top 5 selections without the other person knowing them ahead of time.  We each made our picks in the dataDom.js and dataJohn.js files, which then exported our selections as innocuous variables to the ListModular component.
 
+The final chunk of work I did with the files was a __tests__ folder with Vitest unit tests for both App and ListModular.
+
 # How To Use It
 
 Now for the real fun!
