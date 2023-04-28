@@ -27,7 +27,7 @@ npm run dev
 ⭐️ The one-page app begins with the headline text on top and bottom.  The top is cenetered (because of a spotlight graphic that will apear later), while the bottom is flush left to accomodate the picture-in-picture in the lower right corner for the livestream videoconferencing platform (we used Restream).
 ### ![image]![01-OpenLogo](https://user-images.githubusercontent.com/76451364/232341256-59038f1c-9320-4cab-be78-2da1cf388abd.png)
 
-⭐️ From the opening screen, click the large logo in the center.  This will replace that large logo with the ListModular component containing both lists, the spotlight graphic and a staging area in the center that will house the dominant photo/image on the page.
+⭐️ From the opening screen, click the large WrestleMania 39 logo in the center.  This will replace that large logo with the ListModular component containing both lists, the spotlight graphic and a staging area in the center that will house the dominant photo/image on the page.
 ### ![image]![02-ListModularOpen](https://user-images.githubusercontent.com/76451364/232341263-3e7cd887-7393-4e87-a67b-4c90f6c6d0f6.png)
 
 The five list tems in each list should appear as plain rectangles.  All list items begin in "hide" mode, with the text invisible (it's there, but it's the same color as the background).
@@ -84,31 +84,31 @@ The final line of code in the dataJohn.js file is the export line, which collect
 
 In ListModular -- where most of the XML is -- you find the ListSingle sub-component and the FeaturedMatch sub-component.  ListSingle contains most of the data parsing, and also takes two arguments:  arr (an array of data objects, imported from the dataJohn.js and dataDom.js files as listL and listR, respectively), and L_R (string of one letter, "L" or "R" for when the side of the screen matters to the display and/or data tracking).
 
-The ListSingle builds the list by putting the header (the 0 index of the array, and the only key-value pair that it contains, the title) into line 23.  Then the real work happens, thanks to the .map method in line 25:
+The ListSingle builds the list by putting the header (the 0 index of the array, and the only key-value pair that it contains, the title) into line 26.  Then the real work happens, thanks to the .map method in line 28:
 
-### ![image]![ListSingle](https://user-images.githubusercontent.com/76451364/232350928-4b09169a-0036-442d-8af7-bf71d38ff7d0.png)
+### ![image]![ListSingle](https://user-images.githubusercontent.com/76451364/235060557-61feb26a-61bf-48b1-b19c-133d02c4925a.png)
 
-An important detail is line 26, where the index of the item being mapped is stored as a simple string value "i".  This gets used in generating the unique key for each button element (line 29), for the setLastClick state (line 39), and to appear on screen along with the item.title (line 48).  Some conditional logic updates state and styling.
+An important detail is line 29, where the index of the item being mapped is stored as a simple string value "i".  This gets used in generating the unique key for each button element (line 32), for the setLastClick state (line 46), and to appear on screen along with the item.title (line 54).  Some conditional logic updates state and styling.
 
 I used a button element rather than a div for each list item, because the button tag has some built-in styling that's useful, like horizontal and vertical centering and smooth resizing based on the amount of text to be displayed.  Plus, since they are supposed to be clicked, they technically are buttons, heh!
 
-And speaking of state, there are three sets of useState declared at the top of ListModular, along with two methods.
+And speaking of state, there are three sets of useState declared at the top of ListModular, along with two methods:
+
+### ![image]![States](https://user-images.githubusercontent.com/76451364/235060822-587368c2-3929-413f-b10f-bbaa6a6dea4c.png)
 
 *  State "active, setActive" is a string that has a default value when no match is active, and becomes the item.title when a match is active.
-*  State "matchImage, setMatchImage" has a default of null -- the default image is part of the background of the div element, so it technically is always there but is simply covered when there's a active match -- and becomes the item.pix when a match is active.
+*  State "matchImage, setMatchImage" has a default of the WrestleMania 39 logo and becomes the item.pix when a match is active.
 *  State "lastClick, setLastClick" is a string with a default value of an empty string, and becomes a tracker for the last click-generated action.
 
-Since active and matchImage are always working in tandem, I made methods to combine those two state calls into single method calls (clearFeaturedMatch and newFeaturedMatch):
-
-### ![image]![LMState](https://user-images.githubusercontent.com/76451364/232351049-74829bca-1d24-4656-ab99-4333a35a63ad.png)
+Since active and matchImage are always working in tandem, I made methods to combine those two state calls into single method calls (clearFeaturedMatch and newFeaturedMatch).
 
 The FeaturedMatch subcomponent does comparatively little data manipulation, with only one possible clickable action that would change state.  Mostly, it's reading changes that have been made from clicking the buttons that comprise each list:
 
-### ![image]![FeaturedMatch](https://user-images.githubusercontent.com/76451364/232351074-1bd17ef8-4b6b-45de-84a2-8cea2c0228d2.png)
+### ![image]![FeaturedMatch](https://user-images.githubusercontent.com/76451364/235062282-0a1fa062-3f7a-4cf1-a71d-afbd399e1b0a.png)
 
 Since these subcomponents handle all the logic and state changes for ListModular, the ListModular return statement can be very short:
 
-### ![image]![LMReturn](https://user-images.githubusercontent.com/76451364/232351191-c1027d2b-ba97-4d1c-b828-4824fd861c31.png)
+### ![image]![Return](https://user-images.githubusercontent.com/76451364/235062440-5145d3fb-9401-4237-aec4-4f5332e422ff.png)
 
 # Tests Added
 
