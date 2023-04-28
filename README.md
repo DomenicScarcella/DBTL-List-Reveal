@@ -116,11 +116,11 @@ There are now unit tests in the __tests__ folder, since I wanted this to have au
 
 npm run test
 
-. . . or, to get a browser version of the test results, . . .
+or
 
 npm run test:ui
 
-. . . from the terminal in the project folder.
+. . . from the terminal in the project folder.  The :ui option opens the test results in a browser window.
 
 # This Is My First App . . .
 
