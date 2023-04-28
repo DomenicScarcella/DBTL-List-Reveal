@@ -13,25 +13,25 @@
 }
 
 .featured-match {
-    width: 45vw;
+    width: 48vw;
     height: 60vh;
-    background-image: url("./art/wmlogo.png");
-    background-size: 46.5vw;
-    background-repeat: no-repeat;
-    background-position: center;
+    margin-left: -1.5vw;
+    margin-right: -1.5vw;
 }
 
-#null-image {
+#no-shadow {
     box-shadow: none;
 }
 
-#featured-image {
-    width: 48vw;
+.featured-image {
+    width: auto;
     height: auto;
+    max-width: 48vw;
+    max-height: 56vh;
     position: absolute;
+    top: 0;
     left: 0;
     right: 0;
-    top: 0;
     bottom: 0;
     margin: auto;
     box-shadow: 0 1.25vh 2.25vh .25vh #000000;
@@ -42,7 +42,7 @@
     height: 51vh;
     position: absolute;
     top: 0;
-    margin: -21.5vh 0 0 -11.5vw;
+    margin: -21.5vh 0 0 -10vw;
 }
 
 .single-list {
@@ -83,6 +83,7 @@ h2 {
 
 .hide {
     color: #7f7f7f;
+    font-size: 0.5vh;
 }
 
 .unhide {

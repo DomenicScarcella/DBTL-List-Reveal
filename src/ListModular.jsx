@@ -1,16 +1,17 @@
 import { useState } from "react";
 import spotlight from "./art/spotlight.png";
+import wmlogo from "./art/wmlogo.png";
 import { listL } from "./dataJohn.js";
 import { listR } from "./dataDom.js";
 import "./ListModular.css";
 
 export function ListModular() {
-    const [active, setActive] = useState("Small graphic of WrestleMania 39 logo");
-    const [matchImage, setMatchImage] = useState(null);
+    const [active, setActive] = useState("WrestleMania 39 logo");
+    const [matchImage, setMatchImage] = useState(wmlogo);
     const [lastClick, setLastClick] = useState("");
 
     const clearFeaturedMatch = () => {
-        setMatchImage(null); setActive("Small graphic of WrestleMania 39 logo")
+        setMatchImage(wmlogo); setActive("WrestleMania 39 logo")
     }
 
     const newFeaturedMatch = (p, t) => {
@@ -57,8 +58,18 @@ export function ListModular() {
     function FeaturedMatch() {
         return (
             <div className="featured-match">
-                {
-                    matchImage == null 
+                <img
+                    className={"featured-image " + lastClick}
+                    id={(matchImage == wmlogo ? "no-shadow" : "")}
+                    src={matchImage}
+                    alt={"WWE graphic featuring " + active}
+                    onClick={() => {
+                        clearFeaturedMatch();
+                        setLastClick("matchImage reset")
+                    }}                
+                />
+                {/* {
+                    matchImage == wmlogo 
                     ? <img id="null-image" />
                     : <img
                         className={lastClick} 
@@ -70,7 +81,7 @@ export function ListModular() {
                             setLastClick("matchImage reset")
                         }}
                     />
-                }
+                } */}
                 <img 
                     id="spotlight"
                     src={spotlight}
