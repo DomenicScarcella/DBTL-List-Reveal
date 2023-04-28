@@ -19,10 +19,6 @@
     margin-right: -1.5vw;
 }
 
-#no-shadow {
-    box-shadow: none;
-}
-
 .featured-image {
     width: auto;
     height: auto;
@@ -34,6 +30,13 @@
     right: 0;
     bottom: 0;
     margin: auto;
+}
+
+#no-shadow {
+    box-shadow: none;
+}
+
+#yes-shadow {
     box-shadow: 0 1.25vh 2.25vh .25vh #000000;
 }
 

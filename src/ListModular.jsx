@@ -29,8 +29,8 @@ export function ListModular() {
                         const i = arr.indexOf(item).toString();
                         return (
                             <button
-                                key={L_R + i} 
-                                className={"list-item " + L_R + " " + item.vis}
+                                name={L_R + i} 
+                                className={"list-item " + L_R + " " + item.vis + " " + L_R+i}
                                 onClick={() => {
                                     if (item.vis == "hide") {
                                         item.vis = "unhide";
@@ -65,7 +65,7 @@ export function ListModular() {
             <div className="featured-match">
                 <img
                     className={"featured-image " + lastClick}
-                    id={(matchImage == wmlogo) ? "no-shadow" : ""}
+                    id={(matchImage == wmlogo) ? "no-shadow" : "yes-shadow"}
                     src={matchImage}
                     alt={"WWE graphic featuring " + active}
                     onClick={() => {

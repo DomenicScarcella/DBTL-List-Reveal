@@ -56,15 +56,10 @@ describe("ListModular on initial rendering", () => {
         expect(rheas == 2).toBeTruthy();
     });
 
-    test("should display 'null-image' for FeaturedMatch initially", () => {
+    test("should display wmlogo with 'no-shadow' for FeaturedMatch initially", () => {
         // ACT, ASSERT
-        expect(document.getElementById("null-image")).toBeVisible();
-    });
-
-    test("should NOT display 'featured-image' initially", () => {
-        // ACT, ASSERT 
-        expect(document.getElementById("featured-image")).toBeNull();
-    });   
+        expect(document.getElementById("no-shadow")).toBeVisible();
+    });  
 });
 
 describe("ListModular changes when clicking same list item once, then twice", () => {
@@ -101,7 +96,7 @@ describe("ListModular changes when clicking same list item once, then twice", ()
         fireEvent.click(document.querySelector("button.list-item.L.hide.L1"));
         
         // ASSERT 
-        expect(document.querySelector("img#featured-image")).toBeVisible();
+        expect(document.querySelector("img#yes-shadow")).toBeVisible();
         
         // RETURN TO PRE-TEST STATE 
         fireEvent.click(document.querySelector("button.list-item.L.unhide.L1"));
@@ -114,13 +109,13 @@ describe("ListModular changes when clicking same list item once, then twice", ()
         // ASSERT 
         expect(document.querySelector("button.list-item.L.hide.L1")).toBeNull();
         expect(document.querySelector("button.list-item.L.unhide.L1#active-match-L")).toBeVisible();
-        expect(document.querySelector("img#featured-image")).toBeVisible();
+        expect(document.querySelector("img#yes-shadow")).toBeVisible();
 
         // ACT 
         fireEvent.click(document.querySelector("button.list-item.L.unhide.L1"));
         
         // ASSERT 
-        expect(document.querySelector("img#null-image")).toBeVisible();
+        expect(document.querySelector("img#no-shadow")).toBeVisible();
         expect(document.querySelector("button#active-match-L")).toBeNull();
         expect(document.querySelector("button.list-item.L.unhide.L1")).toBeNull();
         expect(document.querySelector("button.list-item.L.hide.L1")).toBeVisible();
@@ -147,7 +142,7 @@ describe("ListModular clicking several list items", () => {
         expect(document.querySelector("button.list-item.L.unhide.L3")).toBeVisible();
         expect(document.querySelector("button.list-item.L.unhide.L4")).toBeVisible();
         expect(document.querySelector("button.list-item.L.unhide.L5#active-match-L")).toBeVisible();
-        expect(document.querySelector("img#featured-image")).toBeVisible();
+        expect(document.querySelector("img#yes-shadow")).toBeVisible();
         
         // RETURN TO PRE-TEST STATE 
         fireEvent.click(document.querySelector("button.list-item.L.unhide.L1"));
@@ -172,7 +167,7 @@ describe("ListModular clicking several list items", () => {
         expect(document.querySelector("button.list-item.L.unhide.L3")).toBeNull();
         expect(document.querySelector("button.list-item.L.unhide.L4")).toBeVisible();
         expect(document.querySelector("button.list-item.L.unhide.L5#active-match-L")).toBeVisible();
-        expect(document.querySelector("img#featured-image")).toBeVisible();
+        expect(document.querySelector("img#yes-shadow")).toBeVisible();
         
         // RETURN TO PRE-TEST STATE 
         fireEvent.click(document.querySelector("button.list-item.L.unhide.L1"));
@@ -197,7 +192,7 @@ describe("ListModular clicking several list items", () => {
         expect(document.querySelector("button.list-item.L.unhide.L4#active-match-L")).toBeVisible();
         expect(document.querySelector("button.list-item.L.unhide.L5")).toBeVisible();
         expect(document.querySelector("button.list-item.R.unhide.R1#active-match-R")).toBeVisible();
-        expect(document.querySelector("img#featured-image")).toBeVisible();
+        expect(document.querySelector("img#yes-shadow")).toBeVisible();
         
         // RETURN TO PRE-TEST STATE 
         fireEvent.click(document.querySelector("button.list-item.L.unhide.L1"));
@@ -229,13 +224,14 @@ describe("ListModular clicking the featured-image when FeaturedMatch has active 
         fireEvent.click(document.querySelector("button.list-item.R.hide.R5"));
         
         // ASSERT 
-        expect(document.querySelector("img#featured-image")).toBeVisible();
+        expect(document.querySelector("img#yes-shadow")).toBeVisible();
         
         // ACT 
-        fireEvent.click(document.querySelector("img#featured-image"));
+        fireEvent.click(document.querySelector("img#yes-shadow"));
         
         // ASSERT 
-        expect(document.querySelector("img#featured-image")).toBeNull();
+        expect(document.querySelector("img#yes-shadow")).toBeNull();
+        expect(document.querySelector("img#no-shadow")).toBeVisible();
         expect(document.querySelector("button.list-item.L.unhide.L1")).toBeVisible();
         expect(document.querySelector("button.list-item.L.unhide.L2")).toBeVisible();
         expect(document.querySelector("button.list-item.L.unhide.L3")).toBeVisible();
