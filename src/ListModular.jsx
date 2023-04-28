@@ -11,11 +11,13 @@ export function ListModular() {
     const [lastClick, setLastClick] = useState("");
 
     const clearFeaturedMatch = () => {
-        setMatchImage(wmlogo); setActive("WrestleMania 39 logo")
+        setMatchImage(wmlogo);
+        setActive("WrestleMania 39 logo")
     }
 
-    const newFeaturedMatch = (p, t) => {
-        setMatchImage(p); setActive(t)
+    const newFeaturedMatch = (pix, title) => {
+        setMatchImage(pix);
+        setActive(title)
     }
 
     function ListSingle(arr, L_R) {
@@ -28,21 +30,24 @@ export function ListModular() {
                         return (
                             <button
                                 key={L_R + i} 
-                                className={"list-item " + L_R + " " + item.vis + " " + L_R+i}
+                                className={"list-item " + L_R + " " + item.vis}
                                 onClick={() => {
                                     if (item.vis == "hide") {
                                         item.vis = "unhide";
-                                        if (matchImage != item.pix) { newFeaturedMatch(item.pix, item.title) }
+                                        if (matchImage != item.pix) {
+                                            newFeaturedMatch(item.pix, item.title)
+                                        }
                                     } else {
                                         item.vis = "hide";
-                                        if (matchImage == item.pix) { clearFeaturedMatch() }
+                                        if (matchImage == item.pix) {
+                                            clearFeaturedMatch()
+                                        }
                                     }
                                     setLastClick(L_R + i + "_" + item.vis);
                                 }}
                                 id={
-                                    (String(active).valueOf() == String(item.title).valueOf())
-                                    && (item.vis == "unhide")
-                                    ? ((L_R == "L") ? "active-match-L" : "active-match-R")
+                                    (active == item.title) && (item.vis == "unhide")
+                                    ? "active-match-" + L_R
                                     : ""
                                 }
                             >
@@ -60,7 +65,7 @@ export function ListModular() {
             <div className="featured-match">
                 <img
                     className={"featured-image " + lastClick}
-                    id={(matchImage == wmlogo ? "no-shadow" : "")}
+                    id={(matchImage == wmlogo) ? "no-shadow" : ""}
                     src={matchImage}
                     alt={"WWE graphic featuring " + active}
                     onClick={() => {
@@ -68,20 +73,6 @@ export function ListModular() {
                         setLastClick("matchImage reset")
                     }}                
                 />
-                {/* {
-                    matchImage == wmlogo 
-                    ? <img id="null-image" />
-                    : <img
-                        className={lastClick} 
-                        id="featured-image" 
-                        src={matchImage} 
-                        alt={"WWE graphic featuring " + active} 
-                        onClick={() => {
-                            clearFeaturedMatch();
-                            setLastClick("matchImage reset")
-                        }}
-                    />
-                } */}
                 <img 
                     id="spotlight"
                     src={spotlight}
