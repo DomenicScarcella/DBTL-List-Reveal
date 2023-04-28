@@ -29,7 +29,7 @@ export function ListModular() {
                         const i = arr.indexOf(item).toString();
                         return (
                             <button
-                                name={L_R + i} 
+                                key={L_R + i} 
                                 className={"list-item " + L_R + " " + item.vis + " " + L_R+i}
                                 onClick={() => {
                                     if (item.vis == "hide") {
