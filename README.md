@@ -86,9 +86,9 @@ In ListModular -- where most of the XML is -- you find the ListSingle sub-compon
 
 The ListSingle builds the list by putting the header (the 0 index of the array, and the only key-value pair that it contains, the title) into line 26.  Then the real work happens, thanks to the .map method in line 28:
 
-### ![image]![ListSingle](https://user-images.githubusercontent.com/76451364/235060557-61feb26a-61bf-48b1-b19c-133d02c4925a.png)
+### ![image]![ListSingle](https://user-images.githubusercontent.com/76451364/235072457-d4394d4b-c094-4895-8d93-9b41f72dd5cf.png)
 
-An important detail is line 29, where the index of the item being mapped is stored as a simple string value "i".  This gets used in generating the unique key for each button element (line 32), for the setLastClick state (line 46), and to appear on screen along with the item.title (line 54).  Some conditional logic updates state and styling.
+An important detail is line 29, where the index of the item being mapped is stored as a simple string value "i".  This gets used in generating the unique key (line 32), a unique className (line 33, needed for automated tests), for the setLastClick state (line 46), and to appear on screen along with the item.title (line 54).  Some conditional logic updates state and styling.
 
 I used a button element rather than a div for each list item, because the button tag has some built-in styling that's useful, like horizontal and vertical centering and smooth resizing based on the amount of text to be displayed.  Plus, since they are supposed to be clicked, they technically are buttons, heh!
 
@@ -104,7 +104,7 @@ Since active and matchImage are always working in tandem, I made methods to comb
 
 The FeaturedMatch subcomponent does comparatively little data manipulation, with only one possible clickable action that would change state.  Mostly, it's reading changes that have been made from clicking the buttons that comprise each list:
 
-### ![image]![FeaturedMatch](https://user-images.githubusercontent.com/76451364/235062282-0a1fa062-3f7a-4cf1-a71d-afbd399e1b0a.png)
+### ![image]![FeaturedMatch](https://user-images.githubusercontent.com/76451364/235072342-06b8c1e4-0960-429d-93fe-c3c2c78c174b.png)
 
 Since these subcomponents handle all the logic and state changes for ListModular, the ListModular return statement can be very short:
 
