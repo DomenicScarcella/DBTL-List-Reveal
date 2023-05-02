@@ -111,7 +111,7 @@ describe("ListModular changes when clicking same list item once, then twice", ()
         expect(document.querySelector("button.list-item.L.unhide.L1#active-match-L")).toBeVisible();
         expect(document.querySelector("img#yes-shadow")).toBeVisible();
 
-        // ACT 
+        // ACT (RETURN TO PRE-TEST STATE)
         fireEvent.click(document.querySelector("button.list-item.L.unhide.L1"));
         
         // ASSERT 
