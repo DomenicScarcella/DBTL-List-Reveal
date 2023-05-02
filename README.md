@@ -39,12 +39,12 @@ The five list tems in each list should appear as plain rectangles.  All list ite
     2. The photo/image associated with that list item will appear in the center.
 
     3. This list item will be the "active" item and will appear larger.
-### ![image]![03-ListItemUnhide](https://user-images.githubusercontent.com/76451364/232341270-ff680fae-b2dc-4fe9-9846-11826899358e.png)
+### ![image](https://user-images.githubusercontent.com/76451364/232341270-ff680fae-b2dc-4fe9-9846-11826899358e.png)
 
         a. If a list item in "unhide" mode in the opposite list matches the active item, then each list item will appear larger.
 
         b. All other "unhide" list items will be considered "inactive" and will change to standard size while remaining in "unhide" mode.
-### ![image]![04-DualActives](https://user-images.githubusercontent.com/76451364/232341279-b1a9742a-4768-449d-9e73-713c9f99cefd.png)
+### ![image](https://user-images.githubusercontent.com/76451364/232341279-b1a9742a-4768-449d-9e73-713c9f99cefd.png)
 
 ⭐️ If you click on a list item that's in "unhide" mode:
 
@@ -59,7 +59,7 @@ The five list tems in each list should appear as plain rectangles.  All list ite
     1. The photo/image disappears, and this portion of the component reverts to its initial state (blank/"undefined").
 
     2. Any "active" list item will be considered "inactive" and will change to standard size while remaining in "unhide" mode.
-### ![image]![05-AllUnhideNoFeatured](https://user-images.githubusercontent.com/76451364/232341322-dc83f3d2-e99e-428c-b1a2-3f80ba3c6be1.png)
+### ![image](https://user-images.githubusercontent.com/76451364/232341322-dc83f3d2-e99e-428c-b1a2-3f80ba3c6be1.png)
 
 Several actions happen with one click, which makes it simpler to use, I think.  And it's a fun way to do a list reveal!
 
@@ -86,7 +86,7 @@ In ListModular -- where most of the XML is -- you find the ListSingle sub-compon
 
 The ListSingle builds the list by putting the header (the 0 index of the array, and the only key-value pair that it contains, the title) into line 26.  Then the real work happens, thanks to the .map method in line 28:
 
-### ![image]![ListSingle](https://user-images.githubusercontent.com/76451364/235072457-d4394d4b-c094-4895-8d93-9b41f72dd5cf.png)
+### ![image](https://user-images.githubusercontent.com/76451364/235072457-d4394d4b-c094-4895-8d93-9b41f72dd5cf.png)
 
 An important detail is line 29, where the index of the item being mapped is stored as a simple string value "i".  This gets used in generating the unique key (line 32), a unique className (line 33, needed for automated tests), for the setLastClick state (line 46), and to appear on screen along with the item.title (line 54).  Some conditional logic updates state and styling.
 
@@ -94,7 +94,7 @@ I used a button element rather than a div for each list item, because the button
 
 And speaking of state, there are three sets of useState declared at the top of ListModular, along with two methods:
 
-### ![image]![States](https://user-images.githubusercontent.com/76451364/235060822-587368c2-3929-413f-b10f-bbaa6a6dea4c.png)
+### ![image](https://user-images.githubusercontent.com/76451364/235060822-587368c2-3929-413f-b10f-bbaa6a6dea4c.png)
 
 *  State "active, setActive" is a string that has a default value when no match is active, and becomes the item.title when a match is active.
 *  State "matchImage, setMatchImage" has a default of the WrestleMania 39 logo and becomes the item.pix when a match is active.
@@ -104,11 +104,11 @@ Since active and matchImage are always working in tandem, I made methods to comb
 
 The FeaturedMatch subcomponent does comparatively little data manipulation, with only one possible clickable action that would change state.  Mostly, it's reading changes that have been made from clicking the buttons that comprise each list:
 
-### ![image]![FeaturedMatch](https://user-images.githubusercontent.com/76451364/235072342-06b8c1e4-0960-429d-93fe-c3c2c78c174b.png)
+### ![image](https://user-images.githubusercontent.com/76451364/235072342-06b8c1e4-0960-429d-93fe-c3c2c78c174b.png)
 
 Since these subcomponents handle all the logic and state changes for ListModular, the ListModular return statement can be very short:
 
-### ![image]![Return](https://user-images.githubusercontent.com/76451364/235062440-5145d3fb-9401-4237-aec4-4f5332e422ff.png)
+### ![image](https://user-images.githubusercontent.com/76451364/235062440-5145d3fb-9401-4237-aec4-4f5332e422ff.png)
 
 # Tests Added
 
