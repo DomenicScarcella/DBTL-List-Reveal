@@ -25,10 +25,10 @@ npm run dev
 . . . from the terminal in the project folder, and the app will launch in a localhost port.  The app works best when it's in full-screen mode in a 16:9 aspect ratio, though it also works as narrow as 12:9 (4:3), or as wide as 20:9.
 
 ⭐️ The one-page app begins with the headline text on top and bottom.  The top is cenetered (because of a spotlight graphic that will apear later), while the bottom is flush left to accomodate the picture-in-picture in the lower right corner for the livestream videoconferencing platform (we used Restream).
-### ![image]![01-OpenLogo](https://user-images.githubusercontent.com/76451364/232341256-59038f1c-9320-4cab-be78-2da1cf388abd.png)
+### ![image](https://user-images.githubusercontent.com/76451364/232341256-59038f1c-9320-4cab-be78-2da1cf388abd.png)
 
 ⭐️ From the opening screen, click the large WrestleMania 39 logo in the center.  This will replace that large logo with the ListModular component containing both lists, the spotlight graphic and a staging area in the center that will house the dominant photo/image on the page.
-### ![image]![02-ListModularOpen](https://user-images.githubusercontent.com/76451364/232341263-3e7cd887-7393-4e87-a67b-4c90f6c6d0f6.png)
+### ![image](https://user-images.githubusercontent.com/76451364/232341263-3e7cd887-7393-4e87-a67b-4c90f6c6d0f6.png)
 
 The five list tems in each list should appear as plain rectangles.  All list items begin in "hide" mode, with the text invisible (it's there, but it's the same color as the background).
 
