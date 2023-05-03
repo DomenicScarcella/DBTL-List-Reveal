@@ -38,6 +38,7 @@
 
 #yes-shadow {
     box-shadow: 0 1.25vh 2.25vh .25vh #000000;
+    cursor: pointer;
 }
 
 #spotlight {
@@ -82,6 +83,7 @@ h2 {
     padding: auto 1vw;
     margin: auto;
     border: .25vw solid #000000;
+    cursor: pointer;
 }
 
 .hide {

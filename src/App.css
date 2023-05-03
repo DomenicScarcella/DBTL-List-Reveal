@@ -59,4 +59,5 @@ body {
     height: auto;
     max-height: 60vh;
     margin: auto;
+    cursor: pointer;
 }

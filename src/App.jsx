@@ -21,7 +21,7 @@ export function App() {
                 id="open-logo"
                 src={wmlogo} 
                 alt="Large graphic of WrestleMania 39 logo" 
-                label="Click this logo to bring up lists" 
+                title="Click this logo to show lists" 
                 onClick={() => { setOpeningScreenVisible(false) }}
               />
           </div>
