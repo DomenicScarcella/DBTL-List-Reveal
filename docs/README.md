@@ -1,12 +1,14 @@
 # DBTL-List-Reveal
-A one-page app to reveal list items, incorporating graphics and logic that allows several actions to occur with one click of the mouse.
+A one-page app to reveal list items, incorporating graphics and logic that allows several actions to occur with one click of the mouse.  THIS APP IS NOW DEPLOYED:  https://domenicscarcella.github.io/DBTL-List-Reveal/ . . . follow the instructions in this README to learn how the app works (or start clicking away at the deployed site and see what happens :-) ).
 
 # 'Don't Bury The Lead'
 I made this app for the pro wrestling podcast I do with my friend.  It's called "Don't Bury The Lead" (https://www.youtube.com/@DontBuryTheLead/featured) because we like to get right to the top story when we recap a show or preview a big event.  We don't engage in the fake suspense of starting with the uninteresting stuff and making people wait around for the top news!
 
-Our WrestleMania 39 preview show was set for a week before the big event, which would take place on April 1st & 2nd, 2023.  On March 24, we livestreamed our preview show here:  https://www.youtube.com/watch?v=w9yvfg_BGdY .  We wanted to reveal our Top 5 matches that we wanted to see, but couldn't find any free list-reveal apps that were suitable for our purposes and easy to use and customize.
+Our WrestleMania 39 preview show was set for a week before the big event, which would take place on April 1st & 2nd, 2023.  On March 24, we livestreamed our preview show here:  https://www.youtube.com/watch?v=w9yvfg_BGdY (a TEDTalk-length edited version is here:  https://www.youtube.com/watch?v=kletpwsWQOw ).
 
-So, I tried my hand at coding one!  Here it is!
+We wanted to reveal our Top 5 matches that we wanted to see, but couldn't find any free list-reveal apps that were suitable for our purposes and easy to use and customize.
+
+So, I tried my hand at coding one!
 
 This is a Vite app using React and lots of CSS.  Most of the code is in ListModular.jsx.  Using two .js files for our respective lists allowed my friend and I to make our Top 5 selections without the other person knowing them ahead of time.  We each made our picks in the dataDom.js and dataJohn.js files, which then exported our selections as innocuous variables to the ListModular component.
 
