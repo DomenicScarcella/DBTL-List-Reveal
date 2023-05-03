@@ -1,3 +1,5 @@
+# FROM https://vitejs.dev/guide/static-deploy.html
+
 # Simple workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
 
