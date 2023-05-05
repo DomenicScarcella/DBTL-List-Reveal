@@ -7,7 +7,7 @@ export function App() {
   const [openingScreenVisible, setOpeningScreenVisible] = useState(true);
 
   return (
-    <div style={{ backgroundColor: "#efefef", height: "99vh" }}>
+    <div>
       <div className="header">
         <h1 style={{ color: "#00008f" }}>#DontBuryTheLead</h1>
         <h1 style={{ color: "#8f0000" }}>PREVIEW:</h1>

@@ -1,13 +1,13 @@
 .list-modular {
-    width: 96vw;
+    width: 97vw;
     height: 60vh;
     background-color: #ffffff;
     display: flex;
     flex-direction: row;
     position: absolute;
-    top: 18.5vh;
-    left: 1.75vw;
-    border: .25vw solid #7f7f7f;
+    top: 20vh;
+    left: 1.5vw;
+    /* border: .25vw solid #7f7f7f; */
     border-radius: 2vw;
     justify-content: space-around;
 }
@@ -42,15 +42,15 @@
 }
 
 #spotlight {
-    width: 68vw;
-    height: 51vh;
+    width: 66vw;
+    height: 49.5vh;
     position: absolute;
     top: 0;
-    margin: -21.5vh 0 0 -10vw;
+    margin: -22.25vh 0 0 -9vw;
 }
 
 .single-list {
-    width: 21.5vw;
+    width: 22vw;
     height: 58vh;
     display: flex;
     flex-direction: column;
@@ -72,7 +72,7 @@ h2 {
 }
 
 .list-item {
-    width: 21.5vw;
+    width: 22vw;
     height: auto;
     min-height: 8vh;
     text-align: center;
@@ -113,7 +113,7 @@ h2 {
 }
 
 #active-match-L {
-    width: 23vw;
+    width: 24vw;
     min-height: 12vh;
     color: #8f0000;
     font-size: 3.75vh;
@@ -121,18 +121,18 @@ h2 {
     text-shadow: -.125vh .125vh #000000;
     box-shadow: -0.75vh 0.5vh 1.25vh #000000;
     padding-left: 1vw;
-    padding-right: 1vw;
+    padding-right: 2vw;
 }
 
 #active-match-R {
-    width: 23vw;
+    width: 24vw;
     min-height: 12vh;
     color: #8f0000;
     font-size: 3.75vh;
     background-color: #ffffdf;
     text-shadow: .125vh .125vh #000000;
     box-shadow: .75vh 0.5vh 1.25vh #000000;
-    padding-left: 1vw;
+    padding-left: 2vw;
     padding-right: 1vw;
-    margin-left: -1.5vw;
+    margin-left: -2vw;
 }

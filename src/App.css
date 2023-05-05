@@ -1,5 +1,5 @@
 body {
-    background-color: #f0f0f0;
+    background-color: #dfdfdf;
     margin: 0;
 }
 
@@ -8,7 +8,7 @@ body {
     height: auto;
     display: flex;
     flex-direction: column;
-    margin-top: 1vh;
+    padding-top: 1vh;
 }
 
 .header h1 {
@@ -19,6 +19,7 @@ body {
     color: #000000;
     margin: 0;
     line-height: 105%;
+    position: relative;
 }
 
 .footer {
@@ -26,7 +27,9 @@ body {
     height: auto;
     display: flex;
     flex-direction: column;
-    margin-top: 1vh;
+    position: absolute;
+    top: 80vh;
+    padding-top: 2vh;
 }
 
 .footer h1 {
@@ -36,10 +39,8 @@ body {
     font-style: italic;
     font-weight: 500;
     text-shadow: 0 0 1rem #ffd700;
-    position: absolute;
-    bottom: 7vh;
-    left: 2vw;
     margin: 0;
+    padding-left: 2vw;
     line-height: 105%;
 }
 
@@ -48,8 +49,8 @@ body {
     height: 60vh;
     background-color: none;
     position: absolute;
-    top: 18.5vh;
-    left: 1.75vw;
+    top: 19.55vh;
+    left: 2vw;
     display: flex;
 }
 
