@@ -7,7 +7,6 @@
     position: absolute;
     top: 20vh;
     left: 1.5vw;
-    /* border: .25vw solid #7f7f7f; */
     border-radius: 2vw;
     justify-content: space-around;
 }
