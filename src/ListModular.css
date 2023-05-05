@@ -50,7 +50,7 @@
 
 .single-list {
     width: 22vw;
-    height: 58vh;
+    height: 59vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -67,7 +67,7 @@ h2 {
     font-weight: 400;
     letter-spacing: .1vh;
     margin-top: 1vh;
-    margin-bottom: .5vh;
+    margin-bottom: 0;
 }
 
 .list-item {
