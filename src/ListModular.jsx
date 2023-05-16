@@ -51,7 +51,7 @@ export function ListModular() {
                                     : ""
                                 }
                             >
-                                {i}. {item.title}
+                                {i}{ (item.vis == "hide") ? "" : ". " + item.title }
                             </button>
                         )
                     })
