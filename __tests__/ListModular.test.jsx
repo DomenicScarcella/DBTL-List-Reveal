@@ -48,12 +48,12 @@ describe("ListModular on initial rendering", () => {
         expect(listItems == 0).toBeTruthy();
     });
 
-    test("title text for Rhea Ripley matches should technically render -- twice -- even though styling hides visibility", () => {
+    test("title text for Rhea Ripley matches should not render while in 'hide' class", () => {
         // ACT 
         const rheas = screen.queryAllByText(/ vs. Rhea Ripley/).length;
         
         // ASSERT 
-        expect(rheas == 2).toBeTruthy();
+        expect(rheas == 0).toBeTruthy();
     });
 
     test("should display wmlogo with 'no-shadow' for FeaturedMatch initially", () => {
