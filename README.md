@@ -98,7 +98,8 @@ In ListModular -- where most of the XML is -- you find the ListSingle sub-compon
 
 The ListSingle builds the list by putting the header (the 0 index of the array, and the only key-value pair that it contains, the title) into line 26.  Then the real work happens, thanks to the .map method in line 28:
 
-### ![image](https://user-images.githubusercontent.com/76451364/235072457-d4394d4b-c094-4895-8d93-9b41f72dd5cf.png)
+### ![image]![y](https://github.com/DomenicScarcella/DBTL-List-Reveal/assets/76451364/48ed4514-ebeb-4ebb-82ef-853a3c7cde85)
+
 
 An important detail is line 29, where the index of the item being mapped is stored as a simple string value "i".  This gets used in generating the unique key (line 32), a unique className (line 33, needed for automated tests), for the setLastClick state (line 46), and to appear on screen along with the item.title (line 54).  Some conditional logic updates state and styling.
 
