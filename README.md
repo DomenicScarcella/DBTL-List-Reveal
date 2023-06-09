@@ -27,12 +27,12 @@ npm run dev
 . . . from the terminal in the project folder, and the app will launch in a localhost port.  The app works best when it's in full-screen mode in a 16:9 aspect ratio, though it also works as narrow as 12:9 (4:3), or as wide as 20:9.
 
 ⭐️ The one-page app begins with the headline text on top and bottom.  The top is cenetered (because of a spotlight graphic that will apear later), while the bottom is flush left to accomodate the picture-in-picture in the lower right corner for the livestream videoconferencing platform (we used Restream).
-### ![image]![a](https://github.com/DomenicScarcella/DBTL-List-Reveal/assets/76451364/ef2a9394-09ee-4ffe-81f7-13d4cd987bc7)
+### ![image](https://github.com/DomenicScarcella/DBTL-List-Reveal/assets/76451364/ef2a9394-09ee-4ffe-81f7-13d4cd987bc7)
 
 
 
 ⭐️ From the opening screen, click the large WrestleMania 39 logo in the center.  This will replace that large logo with the ListModular component containing both lists, the spotlight graphic and a staging area in the center that will house the dominant photo/image on the page.
-### ![image]![b ](https://github.com/DomenicScarcella/DBTL-List-Reveal/assets/76451364/aeb47989-26bd-4939-8472-667df22749c3)
+### ![image](https://github.com/DomenicScarcella/DBTL-List-Reveal/assets/76451364/aeb47989-26bd-4939-8472-667df22749c3)
 
 
 
@@ -45,14 +45,14 @@ The five list tems in each list should appear as plain rectangles.  All list ite
     2. The photo/image associated with that list item will appear in the center.
 
     3. This list item will be the "active" item and will appear larger.
-### ![image]![c](https://github.com/DomenicScarcella/DBTL-List-Reveal/assets/76451364/64ca4a29-f8ed-43ee-a185-e0bf55052dbf)
+### ![image](https://github.com/DomenicScarcella/DBTL-List-Reveal/assets/76451364/64ca4a29-f8ed-43ee-a185-e0bf55052dbf)
 
 
 
         a. If a list item in "unhide" mode in the opposite list matches the active item, then each list item will appear larger.
 
         b. All other "unhide" list items will be considered "inactive" and will change to standard size while remaining in "unhide" mode.
-### ![image]![d](https://github.com/DomenicScarcella/DBTL-List-Reveal/assets/76451364/6d38ad76-b601-454d-8a26-daf8e5d6ef85)
+### ![image](https://github.com/DomenicScarcella/DBTL-List-Reveal/assets/76451364/6d38ad76-b601-454d-8a26-daf8e5d6ef85)
 
 
 
@@ -69,7 +69,7 @@ The five list tems in each list should appear as plain rectangles.  All list ite
     1. The photo/image disappears, and this portion of the component reverts to its initial state (blank/"undefined").
 
     2. Any "active" list item will be considered "inactive" and will change to standard size while remaining in "unhide" mode.
-### ![image]![e](https://github.com/DomenicScarcella/DBTL-List-Reveal/assets/76451364/838746cd-b54a-48f6-9309-0e72b04da002)
+### ![image](https://github.com/DomenicScarcella/DBTL-List-Reveal/assets/76451364/838746cd-b54a-48f6-9309-0e72b04da002)
 
 
 
@@ -98,7 +98,7 @@ In ListModular -- where most of the XML is -- you find the ListSingle sub-compon
 
 The ListSingle builds the list by putting the header (the 0 index of the array, and the only key-value pair that it contains, the title) into line 26.  Then the real work happens, thanks to the .map method in line 28:
 
-### ![image]![y](https://github.com/DomenicScarcella/DBTL-List-Reveal/assets/76451364/48ed4514-ebeb-4ebb-82ef-853a3c7cde85)
+### ![image](https://github.com/DomenicScarcella/DBTL-List-Reveal/assets/76451364/48ed4514-ebeb-4ebb-82ef-853a3c7cde85)
 
 
 An important detail is line 29, where the index of the item being mapped is stored as a simple string value "i".  This gets used in generating the unique key (line 32), a unique className (line 33, needed for automated tests), for the setLastClick state (line 46), and to appear on screen along with the item.title (line 54).  Some conditional logic updates state and styling.
