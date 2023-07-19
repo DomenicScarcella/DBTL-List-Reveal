@@ -1,5 +1,5 @@
 # DBTL-List-Reveal
-A one-page app to reveal list items, incorporating graphics and logic that allows several actions to occur with one click of the mouse.  THIS APP IS NOW DEPLOYED:  https://domenicscarcella.github.io/DBTL-List-Reveal/ . . . follow the instructions in this README to learn how the app works (or start clicking away at the deployed site and see what happens :-) ).
+An app to reveal list items, incorporating graphics and logic that allows several actions to occur with one click of the mouse.  THIS APP IS NOW DEPLOYED:  https://domenicscarcella.github.io/DBTL-List-Reveal/ . . . follow the instructions in this README to learn how the app works (or start clicking away at the deployed site and see what happens :-) ).
 
 # 'Don't Bury The Lead'
 I made this app for the pro wrestling podcast I do with my friend.  It's called "Don't Bury The Lead" (https://www.youtube.com/@DontBuryTheLead/featured) because we like to get right to the top story when we recap a show or preview a big event.  We don't engage in the fake suspense of starting with the uninteresting stuff and making people wait around for the top news!
