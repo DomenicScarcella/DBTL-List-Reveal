@@ -1,7 +1,7 @@
 # DBTL-List-Reveal
 This is an app to reveal list items, incorporating graphics and logic that allows several actions to occur with one click of the mouse.
 
-It uses HTML, CSS, JavaScript, Vite & Vitest, and is deployed here at GitHub:  https://domenicscarcella.github.io/DBTL-List-Reveal/
+It uses HTML, CSS, JavaScript, React, Vite & Vitest, and is deployed here at GitHub:  https://domenicscarcella.github.io/DBTL-List-Reveal/
 
 This is my first app that I built from scratch without copying a tutorial of some sort.  I didn't know if I could do this, until I did.  I'm proud of the results and hope you like it, too!
 
